@@ -18,6 +18,9 @@ public class StudentServiceLinkedList {
   
   LinkedList<Student> studentLinkedList=new LinkedList<>();
 
+  /**
+   * @return
+   */
   public LinkedList<Student> getAllStudent() {
     long startTime = System.nanoTime();  
     List<Student> studentList =studentRepository.findAll();
@@ -30,6 +33,11 @@ public class StudentServiceLinkedList {
     return studentLinkedList;
   }
 
+  /**
+   * @param student
+   * @param index
+   * @return
+   */
   public LinkedList<Student> addStudent(Student student, int index) {
     long startTime = System.nanoTime();
     studentLinkedList.add(index, student);
@@ -39,6 +47,11 @@ public class StudentServiceLinkedList {
    
   }
 
+  /**
+   * @param student
+   * @param id
+   * @return
+   */
   public LinkedList<Student> updateStudent(Student student, int id) {
     Student savedStudent = null;
     long startTime = System.nanoTime();
@@ -75,6 +88,9 @@ public class StudentServiceLinkedList {
     System.out.println("delete successfully........!");
     return removeStudent;
   }
+  /**
+   * @return
+   */
   public List<Student> sortByAge() {
     // sort using Stream - increasing-order of Age
     long startTime = System.nanoTime();

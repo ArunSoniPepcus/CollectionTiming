@@ -17,6 +17,9 @@ public class StudentServiceHashSet {
   List<Student> studentList;
   HashSet<Student> studentHashSet = new HashSet<Student>();
 
+  /**
+   * @return
+   */
   public HashSet<Student> getAllStudents() {
     long startTime = System.nanoTime();
     studentList = studentRepository.findAll();
@@ -28,6 +31,10 @@ public class StudentServiceHashSet {
     return studentHashSet;
   }
 
+  /**
+   * @param student
+   * @return
+   */
   public Student addStudent(Student student) {
     long startTime = System.nanoTime();
     studentHashSet.add(student);

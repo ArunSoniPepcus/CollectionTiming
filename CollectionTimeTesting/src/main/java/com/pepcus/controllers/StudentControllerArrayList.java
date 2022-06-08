@@ -63,6 +63,6 @@ public class StudentControllerArrayList {
   }
   @GetMapping("/sortById")
   public List<Student> sortbuId() {
-    return studentServiceArrayList.sorByIdt();
+    return studentServiceArrayList.sorById();
   }
 }

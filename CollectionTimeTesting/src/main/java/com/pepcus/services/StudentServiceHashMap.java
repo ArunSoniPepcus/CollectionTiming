@@ -7,6 +7,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author arun
+ *
+ */
 @Service
 public class StudentServiceHashMap {
   @Autowired
@@ -14,6 +18,9 @@ public class StudentServiceHashMap {
   List<Student> studentList;
   HashMap<Integer,Student> studentHashMap = new HashMap<>();
 
+  /**
+   * @return
+   */
   public HashMap<Integer,Student> getAllStudents() {
     long startTime=System.nanoTime();
     studentList = studentRepository.findAll();
@@ -25,6 +32,10 @@ public class StudentServiceHashMap {
     return studentHashMap;
   }
 
+  /**
+   * @param student
+   * @return
+   */
   public Student addStudent(Student student) {
     long startTime=System.nanoTime();
     studentHashMap.put(student.getId(),student);
@@ -33,6 +44,11 @@ public class StudentServiceHashMap {
     return student;
   }
 
+  /**
+   * @param student
+   * @param id
+   * @return
+   */
   public Student update(Student student, Integer id) {
     Student update=null;
     long startTime=System.nanoTime();
@@ -46,6 +62,10 @@ public class StudentServiceHashMap {
    
   }
 
+  /**
+   * @param id
+   * @return
+   */
   public Student delete(Integer id) {
     Student containStudentObj=null;
     long startTime=System.nanoTime();

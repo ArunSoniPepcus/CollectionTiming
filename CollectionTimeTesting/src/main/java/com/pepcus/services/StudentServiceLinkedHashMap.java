@@ -14,6 +14,9 @@ public class StudentServiceLinkedHashMap {
   List<Student> studentList;
   LinkedHashMap<Integer,Student> studentLinkedHashMap = new LinkedHashMap<>();
 
+  /**
+   * @return
+   */
   public LinkedHashMap<Integer,Student> getAllStudents() {
     long startTime=System.nanoTime();
     studentList = studentRepository.findAll();
@@ -25,6 +28,10 @@ public class StudentServiceLinkedHashMap {
     return studentLinkedHashMap;
   }
 
+  /**
+   * @param student
+   * @return
+   */
   public Student addStudent(Student student) {
     long startTime=System.nanoTime();
     studentLinkedHashMap.put(student.getId(),student);
@@ -33,6 +40,11 @@ public class StudentServiceLinkedHashMap {
     return student;
   }
 
+  /**
+   * @param student
+   * @param id
+   * @return
+   */
   public Student update(Student student, Integer id) {
     Student update=null;
     long startTime=System.nanoTime();
@@ -46,6 +58,10 @@ public class StudentServiceLinkedHashMap {
    
   }
 
+  /**
+   * @param id
+   * @return
+   */
   public Student delete(Integer id) {
     Student containStudentObj=null;
     long startTime=System.nanoTime();

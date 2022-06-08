@@ -19,6 +19,9 @@ public class StudentServiceArrayList {
 
   ArrayList<Student> studentArrayList;
 
+  /**
+   * @return
+   */
   public ArrayList<Student> getAllStudents() {
     long startTime = System.nanoTime();
     studentArrayList = (ArrayList<Student>) studentRepository.findAll();
@@ -27,6 +30,11 @@ public class StudentServiceArrayList {
     return studentArrayList;
   }
 
+  /**
+   * @param student
+   * @param index
+   * @return
+   */
   public ArrayList<Student> addStudent(Student student, int index) {
 
     long startTime = System.nanoTime();
@@ -37,6 +45,16 @@ public class StudentServiceArrayList {
 
   }
 
+  /**
+   * @param student
+   * @param id
+   * @return
+   */
+  /**
+   * @param student
+   * @param id
+   * @return
+   */
   public ArrayList<Student> updateStudent(Student student, int id) {
     long startTime = System.nanoTime();
     Student savedStudent = null;
@@ -59,6 +77,10 @@ public class StudentServiceArrayList {
 
   }
 
+  /**
+   * @param stdId
+   * @return
+   */
   public Student deleteStudent(int stdId) {
     long startTime = System.nanoTime();
     Student removeStudent = null;
@@ -73,6 +95,11 @@ public class StudentServiceArrayList {
     return removeStudent;
   }
 
+  /**
+   * @return
+   */
+  //this is second requirement for this project 
+  //find duplicate element in ArrayList
   public ArrayList<Student> duplicates() {
     long startTime = System.nanoTime();
     Set<Student> studentSet = new HashSet<>();
@@ -88,6 +115,9 @@ public class StudentServiceArrayList {
 
   }
 
+  /**
+   * @return
+   */
   public List<Student> sortByAge() {
     // sort using Stream - increasing-order of Age
     long startTime = System.nanoTime();
@@ -98,7 +128,10 @@ public class StudentServiceArrayList {
     return sortedStudents;
   }
 
-  public List<Student> sorByIdt() {
+  /**
+   * @return
+   */
+  public List<Student> sorById() {
     long startTime = System.nanoTime();
     List<Student> reverseSortedStudents = studentArrayList.stream()
         .sorted(Comparator.comparingInt(Student::getId).reversed()).collect(Collectors.toList());
