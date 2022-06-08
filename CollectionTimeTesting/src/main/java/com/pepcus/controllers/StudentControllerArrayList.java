@@ -59,6 +59,7 @@ public class StudentControllerArrayList {
 
   @GetMapping("/sortByAge")
   public List<Student> sortbyAge() {
+    System.out.println("sorted age");
     return studentServiceArrayList.sortByAge();
   }
   @GetMapping("/sortById")
